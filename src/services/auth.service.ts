@@ -23,7 +23,7 @@ export const loginUser = async ({ email, password }: Auth) => {
   const passwordHash = checkIs.password;
   const isCorrect = await verified(password, passwordHash);
   if (!isCorrect) return "CREADENTIAL_INCORRECT";
-  const token = await generateToken({id: checkIs.id});
+  const token = await generateToken({email: checkIs.email});
   const data = {
     token,
     id: checkIs.id,

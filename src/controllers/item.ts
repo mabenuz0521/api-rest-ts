@@ -18,7 +18,7 @@ export const getItem = async ({ params }: Request, res: Response) => {
   }
 };
 
-export const getItems = async (req: Request, res: Response) => {
+export const getItems = async (_req: Request, res: Response) => {
   try {
     const response = await getCars();
     res.send(response);
